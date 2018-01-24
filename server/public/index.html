@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Giphy API Search App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="vendors/angular.min.js"></script>
+  <script src="scripts/client.js"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body ng-app="giphyApp">
+  <h1>Giphy API Search App</h1>
+
+  <main ng-controller="GiphySearchController as vm">
+    <label for="searchInput">Search for GIFs</label>
+    <input type="search" ng-model="vm.search.name" class="input" placeholder="Search Giphy.com">
+    <button ng-click="vm.btnSearch(vm.search.name)">Submit</button>
+
+    <h2 class="resultsList">Results:</h2>
+    <ul>
+      <li ng-repeat="results in vm.gifSearch">
+        <a ng-href="{{results.url}}"></a>
+        <img ng-src="{{results.images.fixed_height_small.url}}">
+      </li>
+    </ul>
+    </div>
+  </main>
+  <section ng-controller="GiphyRandomController as vm">
+    <button ng-click="vm.getRandom()">Random Gif!</button>
+
+    <img ng-src="{{vm.randomGif.data.image_url}}" alt="">
+  </section>
+</body>
+
+</html>
