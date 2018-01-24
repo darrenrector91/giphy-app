@@ -1,0 +1,11 @@
+<label for="searchInput">Search for GIFs</label>
+<input type="search" ng-model="vm.search.name" class="input" placeholder="Search Giphy.com">
+<button ng-click="vm.btnSearch(vm.search.name)">Submit</button>
+
+<h2 class="resultsList">Results:</h2>
+<ul>
+    <li ng-repeat="results in vm.gifSearch">
+        <a ng-href="{{results.url}}"></a>
+        <img ng-src="{{results.images.fixed_height_small.url}}">
+    </li>
+</ul>
