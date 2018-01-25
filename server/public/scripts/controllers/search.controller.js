@@ -1,9 +1,10 @@
 app.controller("GiphySearchController", ['GiphyService', function(GiphyService) {
     const self = this;
     self.results = GiphyService.results
-    self.searchBtn = function (searchGif) {
+    self.btnSearch = function (searchGif) {
+      console.log(searchGif);
+      
       GiphyService.search(searchGif);
     }
-    console.log('search', self.results);
     
   }]);

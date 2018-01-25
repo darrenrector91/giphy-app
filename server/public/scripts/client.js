@@ -1,16 +1,26 @@
-const giphyApp = angular.module('giphyApp', []);
+var app = angular.module('giphyApp', ['ngRoute', 'ngMaterial'])
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('docs-dark', 'default')
+    .primaryPalette('blue')
+    .warnPalette('red')
+    .accentPalette('light-green')
+    .dark();
+});
 
-giphyApp.controller("GiphySearchController", ['$http', function ($http) {
-  const self = this;
-
-  
-  console.log('search controller working');
-}]);
-
-giphyApp.controller("GiphyRandomController", ['$http', function($http){
-  const self = this;
-
-  
-
-  console.log('random controller works!')
-}]);
+// config app
+app.config(function($routeProvider) {
+  console.log('config has arrived!');
+  //client side routes
+  $routeProvider
+    .when('/search', {
+      templateUrl: '/views/search.html',
+      controller: 'GiphySearchController as vm'
+    })
+    .when('/random', {
+      templateUrl: '/views/random.html',
+      controller: 'GiphyRandomController as vm'
+    })
+    .otherwise(
+      {redirectTo: '/search'}
+    );
+});
