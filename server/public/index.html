@@ -4,40 +4,45 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Giphy API Search App</title>
+  <title>Giphy Search</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- ANGULAR -->
   <script src="vendors/angular.min.js"></script>
   <script src="vendors/angular-route.min.js"></script>
-  <script src="vendors/angular-aria.min.js"></script>
-  <script src="vendors/angular-animate.min.js"></script>
-  <script src="vendors/angular-messages.min.js"></script>
-  <script src="vendors/angular-material.min.js"></script>
+
+  <!-- ANGULAR -->
+  <link href="vendors/angular-material.css" rel="stylesheet" type="text/css">
+  <script src="vendors/angular-animate.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-aria.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-messages.min.js" charset="utf-8"></script>
+  <script src="vendors/angular-material.min.js" charset="utf-8"></script>
+
+
   <!-- SCRIPTS -->
   <script src="scripts/client.js"></script>
   <script src="scripts/controllers/search.controller.js"></script>
   <script src="scripts/controllers/random.controller.js"></script>
   <script src="/scripts/service/giphy.service.js"></script>
-  
+
   <!-- STYLING -->
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="vendors/font-awesome-4.7.0/css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 
-<body ng-app="giphyApp">
-  <h1>Giphy API Search App</h1>
-  <nav>
-    <ul>
-      <li>
-        <!-- reference to search.html -->
-        <a href="#!/search">search</a>
-      </li>
-      <li>
-        <!-- reference to random.html -->
-        <a href="#!/random">random</a>
-      </li>
-    </ul>
-  </nav>
-
+<body ng-app="giphyApp" layout="column" layout-align="top-left">
+  <md-toolbar class="md-primary">
+    <div class="md-toolbar-tools">
+      <h1 md-truncate flex class="appTitle">Giphy Search</h1>
+      <link class="linkNav">
+      <a href="#!/search">
+        <i class="fa fa-search" aria-hidden="true"></i>Search</a>
+      </link>
+      <link class="linkNav">
+      <a href="#!/random">
+        <i class="fa fa-refresh" aria-hidden="true"></i>Random</a>
+      </link>
+    </div>
+  </md-toolbar>
   <main ng-view></main>
 
 </body>

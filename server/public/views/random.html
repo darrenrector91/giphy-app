@@ -1,2 +1,8 @@
-<button ng-click="vm.randomBtn()">Random Gif!</button>
-<img ng-src="{{vm.reply.result.image_url}}">
+<div class="container">
+    <div class="imageButton">
+        <md-button class="md-raised md-accent gifRandom" ng-click="vm.btnRandom()">Click for random .gif image</button>
+    </div>
+    <div class="gridTwo" layout-align = "center-center">
+        <img class="randomImage" ng-src="{{vm.reply.result.image_url}}">
+    </div>
+</div>
