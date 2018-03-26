@@ -1,4 +1,4 @@
-# Giphy-app
+# Giphy API Application
 
 Web application built using  while utilizing giphy.com API to search for specific or random gif images.
 
