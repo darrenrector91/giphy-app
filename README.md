@@ -2,7 +2,7 @@
 
 Web application built using  while utilizing giphy.com API to search for specific or random gif images.
 
-![Giphy](https://i.imgur.com/x4d0xSt.png "PHP")
+![Giphy](https://i.imgur.com/x4d0xSt.png)
 
 ## Technologies
 
